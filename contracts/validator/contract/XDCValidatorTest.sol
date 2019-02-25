@@ -286,11 +286,10 @@ contract XDCValidator {
                     // logic to remove cap.
                     candidateCount = candidateCount.sub(1);
                     delete candidates[i];
-                    candidates.length--;
-                    delete validatorsState[candidates[i]];
                     delete KYCString[_invalidMasternode];
                     delete ownerToCandidate[_invalidMasternode];
                     delete invalidKYCCount[_invalidMasternode];
+                    candidates.length--;
                     for(uint k=0;k<owners.length;k++){
                         if (owners[k]==_invalidMasternode){
                             delete owners[k];
